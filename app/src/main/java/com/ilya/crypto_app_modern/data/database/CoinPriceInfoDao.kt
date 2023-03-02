@@ -1,11 +1,11 @@
-package com.ilya.crypto_app_modern.database
+package com.ilya.crypto_app_modern.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfo
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfo
 
 @Dao
 interface CoinPriceInfoDao {

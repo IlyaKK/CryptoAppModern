@@ -1,10 +1,10 @@
-package com.ilya.crypto_app_modern.database
+package com.ilya.crypto_app_modern.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfo
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfo
 
 @Database(entities = [CoinPriceInfo::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

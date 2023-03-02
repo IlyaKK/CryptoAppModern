@@ -1,14 +1,14 @@
-package com.ilya.crypto_app_modern
+package com.ilya.crypto_app_modern.presentation
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.ilya.crypto_app_modern.api.ApiFactory
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfo
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfoRawData
+import com.ilya.crypto_app_modern.data.network.ApiFactory
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfo
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfoRawData
 import com.google.gson.Gson
-import com.ilya.crypto_app_modern.database.AppDatabase
+import com.ilya.crypto_app_modern.data.database.AppDatabase
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit

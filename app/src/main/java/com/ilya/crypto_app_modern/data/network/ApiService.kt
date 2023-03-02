@@ -1,8 +1,8 @@
-package com.ilya.crypto_app_modern.api
+package com.ilya.crypto_app_modern.data.network
 
 
-import com.ilya.crypto_app_modern.pojo.CoinInfoListOfData
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfoRawData
+import com.ilya.crypto_app_modern.data.model.CoinInfoListOfData
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfoRawData
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

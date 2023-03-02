@@ -1,8 +1,8 @@
-package com.ilya.crypto_app_modern.pojo
+package com.ilya.crypto_app_modern.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.ilya.crypto_app_modern.api.ApiFactory.BASE_IMAGE_URL
+import com.ilya.crypto_app_modern.data.network.ApiFactory.BASE_IMAGE_URL
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import com.ilya.crypto_app_modern.utils.convertTimestampToTime

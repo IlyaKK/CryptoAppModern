@@ -1,4 +1,4 @@
-package com.ilya.crypto_app_modern.adapters
+package com.ilya.crypto_app_modern.presentation
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ilya.crypto_app_modern.R
 import com.ilya.crypto_app_modern.databinding.ItemCoinInfoBinding
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfo
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfo
 import com.squareup.picasso.Picasso
 
 class CoinInfoAdapter(private val context: Context) :

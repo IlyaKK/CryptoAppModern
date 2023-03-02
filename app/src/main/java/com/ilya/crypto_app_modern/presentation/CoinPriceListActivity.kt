@@ -1,12 +1,10 @@
-package com.ilya.crypto_app_modern
+package com.ilya.crypto_app_modern.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.ilya.crypto_app_modern.adapters.CoinInfoAdapter
 import com.ilya.crypto_app_modern.databinding.ActivityCoinPrceListBinding
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfo
+import com.ilya.crypto_app_modern.data.model.CoinPriceInfo
 
 class CoinPriceListActivity : AppCompatActivity() {
 
