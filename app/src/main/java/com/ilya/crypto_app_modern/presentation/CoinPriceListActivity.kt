@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ilya.crypto_app_modern.databinding.ActivityCoinPrceListBinding
-import com.ilya.crypto_app_modern.data.network.model.CoinInfoDto
+import com.ilya.crypto_app_modern.domain.CoinInfo
 
 class CoinPriceListActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         setContentView(binding.root)
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinInfoDto) {
+            override fun onCoinClick(coinPriceInfo: CoinInfo) {
                 val intent = CoinDetailActivity.newIntent(
                     this@CoinPriceListActivity,
                     coinPriceInfo.fromSymbol
@@ -28,7 +28,7 @@ class CoinPriceListActivity : AppCompatActivity() {
         }
         binding.rvCoinPriceList.adapter = adapter
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
-        viewModel.priceList.observe(this) {
+        viewModel.coinInfoList.observe(this) {
             adapter.coinInfoList = it
         }
     }
