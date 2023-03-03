@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ilya.crypto_app_modern.databinding.ActivityCoinPriceListBinding
 import com.ilya.crypto_app_modern.domain.CoinInfo
+import com.ilya.crypto_app_modern.presentation.adapters.CoinInfoAdapter
 
 class CoinPriceListActivity : AppCompatActivity() {
 
