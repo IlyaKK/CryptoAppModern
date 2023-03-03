@@ -1,4 +1,4 @@
-package com.ilya.crypto_app_modern.api
+package com.ilya.crypto_app_modern.data.network
 
 
 import retrofit2.Retrofit

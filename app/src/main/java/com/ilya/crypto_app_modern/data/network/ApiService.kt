@@ -1,27 +1,26 @@
-package com.ilya.crypto_app_modern.api
+package com.ilya.crypto_app_modern.data.network
 
 
-import com.ilya.crypto_app_modern.pojo.CoinInfoListOfData
-import com.ilya.crypto_app_modern.pojo.CoinPriceInfoRawData
-import io.reactivex.Single
+import com.ilya.crypto_app_modern.data.network.model.CoinInfoJsonContainerDto
+import com.ilya.crypto_app_modern.data.network.model.CoinNamesListDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
 
     @GET("top/totalvolfull")
-    fun getTopCoinsInfo(
+    suspend fun getTopCoinsInfo(
         @Query(QUERY_PARAM_API_KEY) apiKey: String = "",
         @Query(QUERY_PARAM_LIMIT) limit: Int = 10,
         @Query(QUERY_PARAM_TO_SYMBOL) tSym: String = CURRENCY
-    ): Single<CoinInfoListOfData>
+    ): CoinNamesListDto
 
     @GET("pricemultifull")
-    fun getFullPriceList(
+    suspend fun getFullPriceList(
         @Query(QUERY_PARAM_API_KEY) apiKey: String = "",
         @Query(QUERY_PARAM_FROM_SYMBOLS) fSyms: String,
         @Query(QUERY_PARAM_TO_SYMBOLS) tSyms: String = CURRENCY
-    ): Single<CoinPriceInfoRawData>
+    ): CoinInfoJsonContainerDto
 
     companion object {
         private const val QUERY_PARAM_API_KEY = "api_key"
