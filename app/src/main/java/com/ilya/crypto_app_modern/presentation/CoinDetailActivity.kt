@@ -5,9 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.ilya.crypto_app_modern.data.network.ApiFactory
 import com.ilya.crypto_app_modern.databinding.ActivityCoinDetailBinding
-import com.ilya.crypto_app_modern.utils.convertTimestampToTime
 import com.squareup.picasso.Picasso
 
 class CoinDetailActivity : AppCompatActivity() {
@@ -32,10 +30,10 @@ class CoinDetailActivity : AppCompatActivity() {
             binding.tvMinPrice.text = it.lowDay
             binding.tvMaxPrice.text = it.highDay
             binding.tvLastMarket.text = it.lastMarket
-            binding.tvLastUpdate.text = convertTimestampToTime(it.lastUpdate)
+            binding.tvLastUpdate.text = it.lastUpdate
             binding.tvFromSymbol.text = it.fromSymbol
             binding.tvToSymbol.text = it.toSymbol
-            Picasso.get().load(ApiFactory.BASE_IMAGE_URL + it.imageUrl).into(binding.ivLogoCoin)
+            Picasso.get().load(it.imageUrl).into(binding.ivLogoCoin)
         }
     }
 

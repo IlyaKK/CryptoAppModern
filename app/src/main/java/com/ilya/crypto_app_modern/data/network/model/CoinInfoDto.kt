@@ -2,8 +2,6 @@ package com.ilya.crypto_app_modern.data.network.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import com.ilya.crypto_app_modern.data.network.ApiFactory.BASE_IMAGE_URL
-import com.ilya.crypto_app_modern.utils.convertTimestampToTime
 
 data class CoinInfoDto(
     @SerializedName("TYPE")
@@ -123,12 +121,4 @@ data class CoinInfoDto(
     @SerializedName("IMAGEURL")
     @Expose
     val imageUrl: String?
-) {
-    fun getFormattedTime(): String {
-        return convertTimestampToTime(lastUpdate)
-    }
-
-    fun getFullImageUrl(): String {
-        return BASE_IMAGE_URL + imageUrl
-    }
-}
+)

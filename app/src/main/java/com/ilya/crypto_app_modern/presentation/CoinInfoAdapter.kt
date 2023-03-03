@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ilya.crypto_app_modern.R
-import com.ilya.crypto_app_modern.data.network.ApiFactory
 import com.ilya.crypto_app_modern.databinding.ItemCoinInfoBinding
 import com.ilya.crypto_app_modern.domain.CoinInfo
-import com.ilya.crypto_app_modern.utils.convertTimestampToTime
 import com.squareup.picasso.Picasso
 
 class CoinInfoAdapter(private val context: Context) :
@@ -42,8 +40,8 @@ class CoinInfoAdapter(private val context: Context) :
                 binding.tvSymbols.text = String.format(symbolsTemplate, fromSymbol, toSymbol)
                 binding.tvPrice.text = price
                 binding.tvLastUpdate.text =
-                    String.format(lastUpdateTemplate, convertTimestampToTime(lastUpdate))
-                Picasso.get().load(ApiFactory.BASE_IMAGE_URL + imageUrl).into(binding.ivLogoCoin)
+                    String.format(lastUpdateTemplate, lastUpdate)
+                Picasso.get().load(imageUrl).into(binding.ivLogoCoin)
                 itemView.setOnClickListener {
                     onCoinClickListener?.onCoinClick(this)
                 }
