@@ -3,14 +3,14 @@ package com.ilya.crypto_app_modern.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.ilya.crypto_app_modern.databinding.ActivityCoinPrceListBinding
+import com.ilya.crypto_app_modern.databinding.ActivityCoinPriceListBinding
 import com.ilya.crypto_app_modern.domain.CoinInfo
 
 class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
     private val binding by lazy {
-        ActivityCoinPrceListBinding.inflate(layoutInflater)
+        ActivityCoinPriceListBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
