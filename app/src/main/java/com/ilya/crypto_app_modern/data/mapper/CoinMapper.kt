@@ -6,6 +6,9 @@ import com.ilya.crypto_app_modern.data.network.model.CoinInfoDto
 import com.ilya.crypto_app_modern.data.network.model.CoinInfoJsonContainerDto
 import com.ilya.crypto_app_modern.data.network.model.CoinNamesListDto
 import com.ilya.crypto_app_modern.domain.CoinInfo
+import java.sql.Timestamp
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CoinMapper {
 
@@ -17,7 +20,7 @@ class CoinMapper {
         highDay = coinInfoDto.highDay,
         lowDay = coinInfoDto.lowDay,
         lastMarket = coinInfoDto.lastMarket,
-        imageUrl = coinInfoDto.imageUrl
+        imageUrl = BASE_IMAGE_URL + coinInfoDto.imageUrl
     )
 
     fun mapJsonContainerToListCoinInfoDto(jsonContainer: CoinInfoJsonContainerDto): List<CoinInfoDto> {
@@ -48,10 +51,24 @@ class CoinMapper {
         fromSymbol = coinInfoDbModel.fromSymbol,
         toSymbol = coinInfoDbModel.toSymbol,
         price = coinInfoDbModel.price,
-        lastUpdate = coinInfoDbModel.lastUpdate,
+        lastUpdate = convertTimestampToTime(coinInfoDbModel.lastUpdate),
         highDay = coinInfoDbModel.highDay,
         lowDay = coinInfoDbModel.lowDay,
         lastMarket = coinInfoDbModel.lastMarket,
         imageUrl = coinInfoDbModel.imageUrl
     )
+
+    private fun convertTimestampToTime(timestamp: Long?): String {
+        if (timestamp == null) return ""
+        val stamp = Timestamp(timestamp * 1000)
+        val date = Date(stamp.time)
+        val pattern = "HH:mm:ss"
+        val sdf = SimpleDateFormat(pattern, Locale.getDefault())
+        sdf.timeZone = TimeZone.getDefault()
+        return sdf.format(date)
+    }
+
+    companion object {
+        private const val BASE_IMAGE_URL = "https://cryptocompare.com"
+    }
 }
