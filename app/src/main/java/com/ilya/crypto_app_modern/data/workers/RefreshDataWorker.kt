@@ -30,7 +30,7 @@ class RefreshDataWorker(
                     mapper.mapDtoToDbModel(it)
                 }
                 coinInfoDao.insertPriceList(dbModelList)
-            } catch (e: Exception) {
+            } catch (_: Exception) {
             }
             delay(10000)
         }
