@@ -9,8 +9,9 @@ import com.ilya.crypto_app_modern.domain.CoinInfo
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
-class CoinMapper {
+class CoinMapper @Inject constructor() {
 
     fun mapDtoToDbModel(coinInfoDto: CoinInfoDto) = CoinInfoDbModel(
         fromSymbol = coinInfoDto.fromSymbol,
