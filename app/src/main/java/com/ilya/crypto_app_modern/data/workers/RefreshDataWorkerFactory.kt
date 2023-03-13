@@ -7,8 +7,9 @@ import androidx.work.WorkerParameters
 import com.ilya.crypto_app_modern.data.database.CoinInfoDao
 import com.ilya.crypto_app_modern.data.mapper.CoinMapper
 import com.ilya.crypto_app_modern.data.network.ApiService
+import javax.inject.Inject
 
-class RefreshDataWorkerFactory(
+class RefreshDataWorkerFactory @Inject constructor(
     private val coinInfoDao: CoinInfoDao,
     private val apiService: ApiService,
     private val mapper: CoinMapper
